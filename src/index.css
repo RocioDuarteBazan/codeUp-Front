@@ -1,0 +1,176 @@
+/* Estilos Globales */
+* {
+  box-sizing: border-box;
+} 
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos para el Home */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.home-main {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+}
+
+.navbar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-menu li {
+  display: inline;
+}
+
+.navbar-menu a {
+  color: white;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links li {
+  margin: 0 1rem;
+}
+
+.footer-links a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+/* Estilos para la tarjeta de evento */
+.event-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+.event-card:hover {
+  transform: scale(1.02);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px; /* Ajusta la altura según necesites */
+  object-fit: cover; /* Para mantener la proporción */
+}
+
+.event-details {
+  padding: 15px;
+}
+
+.event-name {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: #333;
+  text-align: start;
+}
+
+.event-date,
+.event-description,
+.event-place,
+.event-minimum-age,
+.event-organizer,
+.event-attendees {
+  margin: 5px 0;
+  color: #666;
+  text-align: start;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .event-card {
+    margin: 10px;
+  }
+
+  .event-name {
+    font-size: 1.2rem;
+  }
+
+  .event-image {
+    height: 150px; /* Ajusta para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-menu li {
+    margin-bottom: 0.5rem;
+  }
+
+  .home-header h1 {
+    font-size: 2rem;
+  }
+
+  .home-header p {
+    font-size: 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-links li {
+    margin: 0.5rem 0;
+  }
+}
