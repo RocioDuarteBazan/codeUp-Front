@@ -1,22 +1,24 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import userQueries from "../../services/userQueries";
+import login from "../../store/actions/userActions";
 
 
 function Login() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
-    const handleSubmit= e => {
+    const handleSubmit = e => {
         e.preventDefault()
         const aux = new FormData(e.target)
         const data = Object.fromEntries(aux.entries())
         userQueries.login(data).then(response => {
             if (response.token) {
+                dispatch(login(response))
                 navigate("/events");
             } else {
                 alert(response);
             }
-        }).catch(error => {
-            alert("Error: " + error); 
         });
     }
 

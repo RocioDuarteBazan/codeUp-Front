@@ -9,6 +9,9 @@ const initialStore = {
 const userReducer = createReducer (initialStore, (builder) =>{
     builder.
     addCase(login, (state, action )=>{
+        console.log("aca llegaria");
+        console.log("action", action);
+    
         const aux = {...state}
         aux.userData = action.payload.user
         aux.token = action.payload.token
