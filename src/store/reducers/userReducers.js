@@ -1,12 +1,12 @@
-import {createrReducer} from "@reduxjs/toolkit"
-import {login} from "../actions/userActions"
+import { createReducer } from '@reduxjs/toolkit';
+import login    from "../actions/userActions"
 
 const initialStore = {
     userData: null,
     token: null
 }
 
-const userReducer = createrReducer(initialStore, (builder) =>{
+const userReducer = createReducer (initialStore, (builder) =>{
     builder.
     addCase(login, (state, action )=>{
         const aux = {...state}
